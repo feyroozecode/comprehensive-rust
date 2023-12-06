@@ -48,32 +48,42 @@ fn main() {
 }
 ```
 
-The `self` arguments specify the "receiver" - the object the method acts on. There
-are several common receivers for a method:
+The `self` arguments specify the "receiver" - the object the method acts on.
+There are several common receivers for a method:
 
-* `&self`: borrows the object from the caller using a shared and immutable
+- `&self`: borrows the object from the caller using a shared and immutable
   reference. The object can be used again afterwards.
-* `&mut self`: borrows the object from the caller using a unique and mutable
+- `&mut self`: borrows the object from the caller using a unique and mutable
   reference. The object can be used again afterwards.
-* `self`: takes ownership of the object and moves it away from the caller. The
-  method becomes the owner of the object. The object will be dropped (deallocated)
-  when the method returns, unless its ownership is explicitly
+- `self`: takes ownership of the object and moves it away from the caller. The
+  method becomes the owner of the object. The object will be dropped
+  (deallocated) when the method returns, unless its ownership is explicitly
   transmitted. Complete ownership does not automatically mean mutability.
-* `mut self`: same as above, but the method can mutate the object.
-* No receiver: this becomes a static method on the struct. Typically used to
+- `mut self`: same as above, but the method can mutate the object.
+- No receiver: this becomes a static method on the struct. Typically used to
   create constructors which are called `new` by convention.
 
 <details>
 
 Key Points:
-* It can be helpful to introduce methods by comparing them to functions.
-  * Methods are called on an instance of a type (such as a struct or enum), the first parameter represents the instance as `self`.
-  * Developers may choose to use methods to take advantage of method receiver syntax and to help keep them more organized. By using methods we can keep all the implementation code in one predictable place.
-* Point out the use of the keyword `self`, a method receiver.
-  * Show that it is an abbreviated term for `self: Self` and perhaps show how the struct name could also be used.
-  * Explain that `Self` is a type alias for the type the `impl` block is in and can be used elsewhere in the block.
-  * Note how `self` is used like other structs and dot notation can be used to refer to individual fields.
-  * This might be a good time to demonstrate how the `&self` differs from `self` by trying to run `finish` twice.
-  * Beyond variants on `self`, there are also [special wrapper types](https://doc.rust-lang.org/reference/special-types-and-traits.html) allowed to be receiver types, such as `Box<Self>`.
+
+- It can be helpful to introduce methods by comparing them to functions.
+  - Methods are called on an instance of a type (such as a struct or enum), the
+    first parameter represents the instance as `self`.
+  - Developers may choose to use methods to take advantage of method receiver
+    syntax and to help keep them more organized. By using methods we can keep
+    all the implementation code in one predictable place.
+- Point out the use of the keyword `self`, a method receiver.
+  - Show that it is an abbreviated term for `self: Self` and perhaps show how
+    the struct name could also be used.
+  - Explain that `Self` is a type alias for the type the `impl` block is in and
+    can be used elsewhere in the block.
+  - Note how `self` is used like other structs and dot notation can be used to
+    refer to individual fields.
+  - This might be a good time to demonstrate how the `&self` differs from `self`
+    by trying to run `finish` twice.
+  - Beyond variants on `self`, there are also
+    [special wrapper types](https://doc.rust-lang.org/reference/special-types-and-traits.html)
+    allowed to be receiver types, such as `Box<Self>`.
 
 </details>

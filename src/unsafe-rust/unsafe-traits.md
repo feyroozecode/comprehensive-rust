@@ -4,8 +4,8 @@ minutes: 5
 
 # Implementing Unsafe Traits
 
-Like with functions, you can mark a trait as `unsafe` if the implementation must guarantee
-particular conditions to avoid undefined behaviour.
+Like with functions, you can mark a trait as `unsafe` if the implementation must
+guarantee particular conditions to avoid undefined behaviour.
 
 For example, the `zerocopy` crate has an unsafe trait that looks
 [something like this](https://docs.rs/zerocopy/latest/zerocopy/trait.AsBytes.html):
@@ -31,8 +31,8 @@ unsafe impl AsBytes for u32 {}
 
 <details>
 
-There should be a `# Safety` section on the Rustdoc for the trait explaining the requirements for
-the trait to be safely implemented.
+There should be a `# Safety` section on the Rustdoc for the trait explaining the
+requirements for the trait to be safely implemented.
 
 The actual safety section for `AsBytes` is rather longer and more complicated.
 

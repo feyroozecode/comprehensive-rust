@@ -30,11 +30,10 @@ where
 
 There are two ways to specify `B` for this method:
 
- * With the "turbofish": `some_iterator.collect::<COLLECTION_TYPE>()`, as
-   shown. The `_` shorthand used here lets Rust infer the type of the `Vec`
-   elements. 
- * With type inference: `let prime_squares: Vec<_> =
-   some_iterator.collect()`. Rewrite the example to use this form.
+- With the "turbofish": `some_iterator.collect::<COLLECTION_TYPE>()`, as shown.
+  The `_` shorthand used here lets Rust infer the type of the `Vec` elements.
+- With type inference: `let prime_squares: Vec<_> = some_iterator.collect()`.
+  Rewrite the example to use this form.
 
 There are basic implementations of `FromIterator` for `Vec`, `HashMap`, etc.
 There are also more specialized implementations which let you do cool things

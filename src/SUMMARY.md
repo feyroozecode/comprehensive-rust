@@ -1,6 +1,7 @@
-
 <!-- Keep first page as index.md to avoid giving it two names. -->
+
 [Welcome to Comprehensive Rust 🦀](index.md)
+
 - [Running the Course](running-the-course.md)
   - [Course Structure](running-the-course/course-structure.md)
   - [Keyboard Shortcuts](running-the-course/keyboard-shortcuts.md)
@@ -10,8 +11,7 @@
   - [Code Samples](cargo/code-samples.md)
   - [Running Cargo Locally](cargo/running-locally.md)
 
-
-----
+---
 
 # Day 1: Morning
 
@@ -63,7 +63,7 @@
   - [Exercise: Elevator Events](user-defined-types/exercise.md)
     - [Solution](user-defined-types/solution.md)
 
-----
+---
 
 # Day 2: Morning
 
@@ -112,7 +112,7 @@
   - [Exercise: ROT13](std-traits/exercise.md)
     - [Solution](std-traits/solution.md)
 
-----
+---
 
 # Day 3: Morning
 
@@ -202,7 +202,7 @@
 
 # Android
 
-----
+---
 
 - [Welcome](android.md)
 - [Setup](android/setup.md)
@@ -237,11 +237,9 @@
   - [With Java](android/interoperability/java.md)
 - [Exercises](exercises/android/morning.md)
 
-
-
 # Chromium
 
-----
+---
 
 - [Welcome](chromium.md)
 - [Setup](chromium/setup.md)
@@ -260,8 +258,8 @@
   - [Example bindings](chromium/interoperability-with-cpp/example-bindings.md)
   - [Limitations of CXX](chromium/interoperability-with-cpp/limitations-of-cxx.md)
   - [CXX error handling](chromium/interoperability-with-cpp/error-handling.md)
-      - [Error handling: QR example](chromium/interoperability-with-cpp/error-handling-qr.md)
-      - [Error handling: PNG example](chromium/interoperability-with-cpp/error-handling-png.md)
+    - [Error handling: QR example](chromium/interoperability-with-cpp/error-handling-qr.md)
+    - [Error handling: PNG example](chromium/interoperability-with-cpp/error-handling-png.md)
   - [Using CXX in Chromium](chromium/interoperability-with-cpp/using-cxx-in-chromium.md)
   - [Exercise](exercises/chromium/interoperability-with-cpp.md)
 - [Adding third party crates](chromium/adding-third-party-crates.md)
@@ -279,10 +277,9 @@
   - [Exercise](exercises/chromium/third-party.md)
 - [Bringing it together - Exercise](exercises/chromium/bringing-it-together.md)
 
-
 # Bare Metal: Morning
 
-----
+---
 
 - [Welcome](bare-metal.md)
 - [`no_std`](bare-metal/no_std.md)
@@ -331,10 +328,9 @@
   - [RTC Driver](exercises/bare-metal/rtc.md)
   - [Solutions](exercises/bare-metal/solutions-afternoon.md)
 
-
 # Concurrency: Morning
 
-----
+---
 
 - [Welcome](concurrency.md)
 - [Threads](concurrency/threads.md)
@@ -377,10 +373,9 @@
   - [Broadcast Chat Application](exercises/concurrency/chat-app.md)
   - [Solutions](exercises/concurrency/solutions-afternoon.md)
 
-
 # Final Words
 
-----
+---
 
 - [Thanks!](thanks.md)
 - [Glossary](glossary.md)

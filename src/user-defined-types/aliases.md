@@ -4,7 +4,8 @@ minutes: 2
 
 # Type Aliases
 
-A type alias creates a name for another type. The two types can be used interchangeably.
+A type alias creates a name for another type. The two types can be used
+interchangeably.
 
 ```rust,editable
 enum CarryableConcreteItem {

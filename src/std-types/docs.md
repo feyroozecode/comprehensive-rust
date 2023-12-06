@@ -4,12 +4,18 @@ minutes: 5
 
 # Language Docs
 
-Rust comes with extensive documentation of the language and the standard library.
+Rust comes with extensive documentation of the language and the standard
+library.
 
 For example:
- * All of the details about [loops](https://doc.rust-lang.org/stable/reference/expressions/loop-expr.html).
- * Primitive types like [`u8`](https://doc.rust-lang.org/stable/std/primitive.u8.html).
- * Standard-library items like [`Option`](https://doc.rust-lang.org/stable/std/option/enum.Option.html) or [`BinaryHeap`](https://doc.rust-lang.org/stable/std/collections/struct.BinaryHeap.html).
+
+- All of the details about
+  [loops](https://doc.rust-lang.org/stable/reference/expressions/loop-expr.html).
+- Primitive types like
+  [`u8`](https://doc.rust-lang.org/stable/std/primitive.u8.html).
+- Standard-library items like
+  [`Option`](https://doc.rust-lang.org/stable/std/option/enum.Option.html) or
+  [`BinaryHeap`](https://doc.rust-lang.org/stable/std/collections/struct.BinaryHeap.html).
 
 In fact, you can document your own code:
 
@@ -30,8 +36,8 @@ automatically documented at [`docs.rs`](https://docs.rs) using the
 [rustdoc](https://doc.rust-lang.org/rustdoc/what-is-rustdoc.html) tool. It is
 idiomatic to document all public items in an API using this pattern.
 
-To document an item from inside the item (such as inside a module), use `//!`
-or `/*! .. */`, called "inner doc comments":
+To document an item from inside the item (such as inside a module), use `//!` or
+`/*! .. */`, called "inner doc comments":
 
 ```rust,editable
 //! This module contains functionality relating to divisibility of integers.
@@ -39,7 +45,7 @@ or `/*! .. */`, called "inner doc comments":
 
 <details>
 
-* Show students the generated docs for the `rand` crate at
+- Show students the generated docs for the `rand` crate at
   [`docs.rs/rand`](https://docs.rs/rand).
 
 </details>

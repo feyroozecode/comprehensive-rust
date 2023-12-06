@@ -15,13 +15,14 @@ fn main() {
 }
 ```
 
-* Panics are for unrecoverable and unexpected errors.
-  * Panics are symptoms of bugs in the program.
-  * Runtime failures like failed bounds checks can panic
-  * Assertions (such as `assert!`) panic on failure
-  * Purpose-specific panics can use the `panic!` macro.
-* A panic will "unwind" the stack, dropping values just as if the functions had returned.
-* Use non-panicking APIs (such as `Vec::get`) if crashing is not acceptable.
+- Panics are for unrecoverable and unexpected errors.
+  - Panics are symptoms of bugs in the program.
+  - Runtime failures like failed bounds checks can panic
+  - Assertions (such as `assert!`) panic on failure
+  - Purpose-specific panics can use the `panic!` macro.
+- A panic will "unwind" the stack, dropping values just as if the functions had
+  returned.
+- Use non-panicking APIs (such as `Vec::get`) if crashing is not acceptable.
 
 <details>
 
@@ -43,7 +44,8 @@ fn main() {
 }
 ```
 
-- Catching is unusual; do not attempt to implement exceptions with `catch_unwind`!
+- Catching is unusual; do not attempt to implement exceptions with
+  `catch_unwind`!
 - This can be useful in servers which should keep running even if a single
   request crashes.
 - This does not work if `panic = 'abort'` is set in your `Cargo.toml`.

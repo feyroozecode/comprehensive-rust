@@ -44,8 +44,8 @@ fn count_chars(s: &str) -> usize {
 
 ## Writing Unsafe Functions
 
-You can mark your own functions as `unsafe` if they require particular conditions to avoid undefined
-behaviour.
+You can mark your own functions as `unsafe` if they require particular
+conditions to avoid undefined behaviour.
 
 ```rust,editable
 /// Swaps the values pointed to by the given pointers.
@@ -78,10 +78,10 @@ fn main() {
 
 `get_unchecked`, like most `_unchecked` functions, is unsafe, because it can
 create UB if the range is incorrect. `abs` is incorrect for a different reason:
-it is an external function (FFI).  Calling external functions is usually only a
+it is an external function (FFI). Calling external functions is usually only a
 problem when those functions do things with pointers which might violate Rust's
-memory model, but in general any C function might have undefined behaviour
-under any arbitrary circumstances.
+memory model, but in general any C function might have undefined behaviour under
+any arbitrary circumstances.
 
 The `"C"` in this example is the ABI;
 [other ABIs are available too](https://doc.rust-lang.org/reference/items/external-blocks.html).

@@ -37,12 +37,12 @@ fn main() {
 
 <details>
 
-* A trait defines a number of methods that types must have in order to implement
+- A trait defines a number of methods that types must have in order to implement
   the trait.
 
-* Traits are implemented in an `impl <trait> for <type> { .. }` block.
+- Traits are implemented in an `impl <trait> for <type> { .. }` block.
 
-* Traits may specify pre-implemented (provided) methods and methods that users
+- Traits may specify pre-implemented (provided) methods and methods that users
   are required to implement themselves. Provided methods can rely on required
   methods. In this case, `greet` is provided, and relies on `talk`.
 

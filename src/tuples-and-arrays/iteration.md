@@ -19,10 +19,11 @@ fn main() {
 
 <details>
 
-This functionality uses the `IntoIterator` trait, but we haven't covered that yet.
+This functionality uses the `IntoIterator` trait, but we haven't covered that
+yet.
 
 The `assert_ne!` macro is new here. There are also `assert_eq!` and `assert!`
-macros. These are always checked while, debug-only variants like
-`debug_assert!` compile to nothing in release builds.
+macros. These are always checked while, debug-only variants like `debug_assert!`
+compile to nothing in release builds.
 
 </details>

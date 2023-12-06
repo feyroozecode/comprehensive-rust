@@ -22,13 +22,13 @@ impl PartialEq for Key {
 ```
 
 `Eq` is a full equivalence relation (reflexive, symmetric, and transitive) and
-implies `PartialEq`.  Functions that require full equivalence will use `Eq` as
-a trait bound.
+implies `PartialEq`. Functions that require full equivalence will use `Eq` as a
+trait bound.
 
 ## `PartialOrd` and `Ord`
 
-`PartialOrd` defines a partial ordering, with a `partial_cmp` method. It is
-used to implement the `<`, `<=`, `>=`, and `>` operators.
+`PartialOrd` defines a partial ordering, with a `partial_cmp` method. It is used
+to implement the `<`, `<=`, `>=`, and `>` operators.
 
 ```rust,editable
 use std::cmp::Ordering;
@@ -48,7 +48,8 @@ impl PartialOrd for Citation {
 
 <details>
 
-`PartialEq` can be implemented between different types, but `Eq` cannot, because it is reflexive:
+`PartialEq` can be implemented between different types, but `Eq` cannot, because
+it is reflexive:
 
 ```rust,editable
 struct Key { id: u32, metadata: Option<String> }

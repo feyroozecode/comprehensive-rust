@@ -33,11 +33,13 @@ fn main() {
 
 <details>
 
-- The program here is safe because it is single-threaded. However, the Rust compiler is conservative
-  and will assume the worst. Try removing the `unsafe` and see how the compiler explains that it is
-  undefined behavior to mutate a static from multiple threads.
+- The program here is safe because it is single-threaded. However, the Rust
+  compiler is conservative and will assume the worst. Try removing the `unsafe`
+  and see how the compiler explains that it is undefined behavior to mutate a
+  static from multiple threads.
 
-- Using a mutable static is generally a bad idea, but there are some cases where it might make sense
-  in low-level `no_std` code, such as implementing a heap allocator or working with some C APIs.
+- Using a mutable static is generally a bad idea, but there are some cases where
+  it might make sense in low-level `no_std` code, such as implementing a heap
+  allocator or working with some C APIs.
 
 </details>

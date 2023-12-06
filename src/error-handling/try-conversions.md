@@ -4,7 +4,8 @@ minutes: 5
 
 # Try Conversions
 
-The effective expansion of `?` is a little more complicated than previously indicated:
+The effective expansion of `?` is a little more complicated than previously
+indicated:
 
 ```rust,ignore
 expression?
@@ -72,22 +73,28 @@ fn main() {
 
 <details>
 
-The return type of the function has to be compatible with the nested functions it calls. For instance,
-a function returning a `Result<T, Err>` can only apply the `?` operator on a function returning a
-`Result<AnyT, Err>`. It cannot apply the `?` operator on a function returning an `Option<AnyT>` or `Result<T, OtherErr>`
-unless `OtherErr` implements `From<Err>`. Reciprocally, a function returning an `Option<T>` can only apply the `?` operator
-on a function returning an `Option<AnyT>`.
+The return type of the function has to be compatible with the nested functions
+it calls. For instance, a function returning a `Result<T, Err>` can only apply
+the `?` operator on a function returning a `Result<AnyT, Err>`. It cannot apply
+the `?` operator on a function returning an `Option<AnyT>` or
+`Result<T, OtherErr>` unless `OtherErr` implements `From<Err>`. Reciprocally, a
+function returning an `Option<T>` can only apply the `?` operator on a function
+returning an `Option<AnyT>`.
 
-You can convert incompatible types into one another with the different `Option` and `Result` methods
-such as `Option::ok_or`, `Result::ok`, `Result::err`.
+You can convert incompatible types into one another with the different `Option`
+and `Result` methods such as `Option::ok_or`, `Result::ok`, `Result::err`.
 
+It is good practice for all error types that don't need to be `no_std` to
+implement `std::error::Error`, which requires `Debug` and `Display`. The `Error`
+crate for `core` is only available in
+[nightly](https://github.com/rust-lang/rust/issues/103765), so not fully
+`no_std` compatible yet.
 
-It is good practice for all error types that don't need to be `no_std` to implement `std::error::Error`, which requires `Debug` and `Display`. The `Error` crate for `core` is only available in [nightly](https://github.com/rust-lang/rust/issues/103765), so not fully `no_std` compatible yet.
+It's generally helpful for them to implement `Clone` and `Eq` too where
+possible, to make life easier for tests and consumers of your library. In this
+case we can't easily do so, because `io::Error` doesn't implement them.
 
-It's generally helpful for them to implement `Clone` and `Eq` too where possible, to make
-life easier for tests and consumers of your library. In this case we can't easily do so, because
-`io::Error` doesn't implement them.
-
-A common alternative to a `From` implementation is `Result::map_err`, especially when the conversion only happens in one place.
+A common alternative to a `From` implementation is `Result::map_err`, especially
+when the conversion only happens in one place.
 
 </details>

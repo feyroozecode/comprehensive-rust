@@ -62,8 +62,8 @@ fn main() {
 Click through to the docs for `IntoIterator`. Every implementation of
 `IntoIterator` must declare two types:
 
-* `Item`: the type to iterate over, such as `i8`,
-* `IntoIter`: the `Iterator` type returned by the `into_iter` method.
+- `Item`: the type to iterate over, such as `i8`,
+- `IntoIter`: the `Iterator` type returned by the `into_iter` method.
 
 Note that `IntoIter` and `Item` are linked: the iterator must have the same
 `Item` type, which means that it returns `Option<Item>`
