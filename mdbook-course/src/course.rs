@@ -70,6 +70,7 @@ pub struct Course {
 pub struct Session {
     pub name: String,
     pub segments: Vec<Segment>,
+    target_minutes: u64,
 }
 
 /// A Segment is a collection of slides with a related theme.
@@ -139,6 +140,7 @@ impl Courses {
             {
                 let course = courses.course_mut(course_name);
                 let session = course.session_mut(session_name);
+                session.target_minutes += frontmatter.target_minutes.unwrap_or(0);
                 session.add_segment(frontmatter, chapter)?;
             }
         }
@@ -228,6 +230,14 @@ impl Course {
     /// sessions.
     pub fn minutes(&self) -> u64 {
         self.into_iter().map(|s| s.minutes()).sum()
+    }
+
+    /// Return the target duration of this course, as the sum of all segment target durations.
+    ///
+    /// This includes breaks between segments, but does not count time between between
+    /// sessions.
+    pub fn target_minutes(&self) -> u64 {
+        self.into_iter().map(|s| s.target_minutes()).sum()
     }
 
     /// Generate a Markdown schedule for this course, for placement at the given path.
@@ -327,6 +337,17 @@ impl Session {
         let breaks = (self.into_iter().filter(|s| s.minutes() > 0).count() - 1) as u64
             * BREAK_DURATION;
         instructional_time + breaks
+    }
+
+    /// Return the target duration of this session.
+    ///
+    /// This includes breaks between segments.
+    pub fn target_minutes(&self) -> u64 {
+        if self.target_minutes > 0 {
+            self.target_minutes
+        } else {
+            self.minutes()
+        }
     }
 }
 
