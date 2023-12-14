@@ -1,0 +1,26 @@
+name: "Course Schedule Updates"
+on:
+  # TODO: _target
+  - pull_request
+
+jobs:
+  course-schedule-comment:
+    runs-on: ubuntu-latest
+    needs: course-schedule
+    name: Post Course Schedule to PR
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Download Schedule Artifact
+        uses: actions/download-artifact@v4
+        with:
+          # This artifact is from the course-schedule job.
+          name: course-schedule
+          path: artifact
+
+      - name: Comment PR
+        uses: thollander/actions-comment-pull-request@v2
+        with:
+          filePath: artifact/course-schedule.md
+          comment_tag: course-schedule
+
