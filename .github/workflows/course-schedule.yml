@@ -1,6 +1,6 @@
 name: "Course Schedule Updates"
 on:
-  - pull_request_target
+  - pull_request
 
 jobs:
   example_comment_pr:
@@ -18,8 +18,16 @@ jobs:
       - name: Generate Schedule
         run: cargo run -p mdbook-course --bin course-schedule > course-schedule.md
 
-      - name: Comment PR
-        uses: thollander/actions-comment-pull-request@v2
+      - name: Upload Schedule as Artifact
+        uses: actions/upload-artifact@v4
         with:
-          filePath: course-schedule.md
-          comment_tag: course-schedule
+          name: course-schedule
+          path: course-schedule.md
+          if-no-files-found: error
+          retention-days: 1
+
+#      - name: Comment PR
+#        uses: thollander/actions-comment-pull-request@v2
+#        with:
+#          filePath: course-schedule.md
+#          comment_tag: course-schedule
